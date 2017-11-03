@@ -1,301 +1,301 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:decorate xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
-      template="template_menu.xhtml"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
- 
-    
-    	
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui"
+             xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+             template="template_menu.xhtml"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+
     <ui:define name="menu">
         <br/>
         <link rel="stylesheet" href="../resources/css_form/bootstrap.min.css" />
-		<link rel="stylesheet" href="../resources/css_form/style.css" type="text/css" />
+        <link rel="stylesheet" href="../resources/css_form/style.css" type="text/css" />
         <h:form>
-        <section class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<header>
-						<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Dados Empresariais:</h2>
-						<span>Preencha com os dados de sua empresa, para efetuar o cadastro</span>
-					</header>
-				</div>
-			</div>
-			<!-- Nesta seção temos o nome e o email -->
-			<div class="row">
-				<div class="form-horizontal" id ="linhaUm">
-					<div class="form-group">
-						<div class="col-sm-4 col-md-3">
-                                                                                                                <label for="txtNomeCompleto" class="control-label">Nome da Empresa:</label>
-                                                                                                                <p:inputText id="nome" value="#{pessoaBean.pessoa.nome}" />
-                                                                                                                <p:watermark for="nome" value=" Ex: Kleber Bambam" />
-                                                                                                                
-							<!--<input type="text" id="txtNomeCompleto" class="form-control" name="nome" placeholder="Ex. Empresa LTDA" /> -->
-							
-						</div>
-						<div class="col-sm-4 col-md-3">
-							<label for="txtEmail" class="control-label">Email Empresarial:</label>
-                                                                                                                 <p:inputText id="email" value="#{pessoaBean.pessoa.email}" style="width: 300px"/>
-                                                                                                                <p:watermark for="email" value=" Ex: nome@email.com.br" />
-						</div>
-                                                                                                 
-                                                                                                <div class="col-sm-4 col-md-3">
-							<label for="txtCNPJ" class="control-label">CNPJ:</label>
-                                                                                                                <p:inputText id="txtCNPJ" value="#{pessoaBean.juridico.cnpj}" style="width: 300px"/>
-                                                                                                                <p:watermark for="txtCNPJ" value=" Ex: Seu CNPJ." />
-						</div>
-                                                                                 </div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="form-horizontal">
-					<div class="form-group">
-						<div class="col-sm-4 col-md-3">
-							<label for="login" class="control-label">Login</label>
-                                                                                                                 <br/>
-                                                                                                                <p:inputText id="login" value="#{pessoaBean.pessoa.login}" />
-                                                                                                                <p:watermark for="login" value=" Ex: user01" />
-						</div>
-						<div class="col-sm-4 col-md-3">
-							<label for="Senha" class="control-label">Senha:</label>
-                                                                                                                <BR/>
-                                                                                                                <p:inputText id="senha" value="#{pessoaBean.pessoa.senha}" />
-                                                                                                                
-						</div>
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<label for="txtDataNascimento">Data Nascimento</label>
-							<BR/>
-                                                                                                                 <p:inputText id="txtDataNascimento" value="#{pessoaBean.pessoa.dt_nasc }" />
-                                                                                                                 <p:watermark for="txtDataNascimento" value=" 00/00/0000" />
-						</div>
-					</div>
+            <section class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <header>
+                            <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Dados Empresariais:</h2>
+                            <span>Preencha com os dados de sua empresa, para efetuar o cadastro</span>
+                        </header>
+                    </div>
+                </div>
+                <!-- Nesta seção temos o nome e o email -->
+                <div class="row">
+                    <div class="form-horizontal" id ="linhaUm">
+                        <div class="form-group">
+                            <div class="col-sm-4 col-md-3">
+                                <label for="txtNomeCompleto" class="control-label">Nome da Empresa:</label>
+                                <p:inputText id="nome" value="#{pessoaBean.pessoa.nome}" />
+                                <p:watermark for="nome" value=" Ex: Kleber Bambam" />
 
-				</div>
-			</div>
+                                <!--<input type="text" id="txtNomeCompleto" class="form-control" name="nome" placeholder="Ex. Empresa LTDA" /> -->
 
-			<div class="row">
-				<div class="col-sm-9 col-sm-offset-3 col-md-4 col-md-offset-0 col-xs-12 " id = "first">
-					<!-- Painel Default -->
-					<div class="panel panel-default">
-						<div class="panel-heading clearfix">
-							<h3 class="panel-title">Possui Funcionários?</h3>
-						</div>
-						<div class="panel-body">
-							<div class="form-inline">
-								<div class="form-group">
-                                                                                                                                                         <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-                                                                                                                                                       
-                                                                                                                                                             <p:selectOneMenu id="console" value="#{pessoaBean.juridico.qtd_funcionarios}" style="width:125px">
-                                                                                                                                                           <f:selectItem itemLabel="1 a 500" itemValue="1" />
-                                                                                                                                                           <f:selectItem itemLabel=" 501 a 1000" itemValue="2" />
-                                                                                                                                                           <f:selectItem itemLabel="1001 a 3000" itemValue="PS4" />
-                                                                                                                                                           <f:selectItem itemLabel="mais de 3000" itemValue="Wii U" />
-                                                                                                                                                       </p:selectOneMenu>
-                                                                                                                                                         </h:panelGrid>
-									<!--<label class="radio-inline">
-										<input type="radio" id="rdFilhos01" name="funcionarios" value="sim" checked="" />
-										Sim 
-									</label>
-									<div class="form-group">
-										<select class="form-control">
-											<option value="0103">1 a 50" itemValue="1" />
-											<option value="0103">50 a 300" itemValue="1" />
-											<option value="0103">Mais de 300" itemValue="1" />
-										</select>
-									</div>
-									<label class="radio-inline">
-										<input type="radio" id="rdFilhos02" name="filhos" value="nao" />
-										Não 
-									</label> -->
-								</div>
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                                <label for="txtEmail" class="control-label">Email Empresarial:</label>
+                                <p:inputText id="email" value="#{pessoaBean.pessoa.email}" style="width: 300px"/>
+                                <p:watermark for="email" value=" Ex: nome@email.com.br" />
+                            </div>
 
-							</div>
-						</div>
-					</div>
-				</div>
+                            <div class="col-sm-4 col-md-3">
+                                <label for="txtCNPJ" class="control-label">CNPJ:</label>
+                                <p:inputText id="txtCNPJ" value="#{pessoaBean.juridico.cnpj}" style="width: 300px"/>
+                                <p:watermark for="txtCNPJ" value=" Ex: Seu CNPJ." />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-sm-4 col-md-3">
+                                <label for="login" class="control-label">Login</label>
+                                <br/>
+                                <p:inputText id="login" value="#{pessoaBean.pessoa.login}" />
+                                <p:watermark for="login" value=" Ex: user01" />
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                                <label for="Senha" class="control-label">Senha:</label>
+                                <BR/>
+                                <p:inputText id="senha" value="#{pessoaBean.pessoa.senha}" />
 
-				<div class="col-sm-9 col-sm-offset-3 col-md-4 col-md-offset-0 col-xs-12" id ="second">
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3">
+                                <label for="txtDataNascimento">Data Nascimento</label>
+                                <BR/>
+                                <p:inputText id="txtDataNascimento" value="#{pessoaBean.pessoa.dt_nasc }" />
+                                <p:watermark for="txtDataNascimento" value=" 00/00/0000" />
+                            </div>
+                        </div>
 
-					<!-- Painel Default -->
-					<div class="panel panel-default">
-						<div class="panel-heading clearfix">
-							<h3 class="panel-title">A empresa possui filiais?</h3>
-						</div>
-						<div class="panel-body">
-							<div class="form-inline">
-								<div class="form-group">
-                                                                                                                                         <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-                                                                                                                                                       
-                                                                                                                                             <p:selectOneMenu id="filiais" value="#{pessoaBean.juridico.qtd_filiais}" style="width:125px" >
-                                                                                                                                                           <f:selectItem itemLabel="01 a 03" itemValue="1" />
-                                                                                                                                                           <f:selectItem itemLabel=" 03 a 10" itemValue="2" />
-                                                                                                                                                           <f:selectItem itemLabel="mais que 10" itemValue="3" />
-                                                                                                                                                           
-                                                                                                                                                       </p:selectOneMenu>
-                                                                                                                                                         </h:panelGrid>
-									<!--<label class="radio-inline">
-                                                                            
-										<input type="radio" id="rdCigarros01" name="filiais" value="sim" checked="" />
-										Sim 
-									</label>
-									<div class="form-group">
-									<select class="form-control"  id="filiais" name="filiais">
-										<option value="0103">" itemValue="1" />
-										<option value="0103">03 a 10" itemValue="1" />
-										<option value="0103">mais que 10" itemValue="1" />
-									</select>
-								</div>
-									<label class="radio-inline">
-										<input type="radio" id="rdCigarros02" name="cigarros" value="nao" />
-										Não 
-									</label> -->
-								</div>
-								
-							</div>
-						</div>
-					</div>
-				</div>
+                    </div>
+                </div>
 
-			</div>
-		 
-	</section>
-	<!-- fim da primeira sessão -->
-	<!-- Inicio da segunda sessão Endereço -->
-	<section class="container">
-		<div class="row">
-			<div class="col-sm-12">
-				<header>
-					<h2><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Endereço</h2>
-					<span>Preencha com seu endereço:</span>
-				</header>
-			</div>
-		</div>
+                <div class="row">
+                    <div class="col-sm-9 col-sm-offset-3 col-md-4 col-md-offset-0 col-xs-12 " id = "first">
+                        <!-- Painel Default -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">Possui Funcionários?</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
 
-		<div class="form-horizontal">
-			<div class="form-group">
-				<div class="row">
-					<div class="col-sm-4 col-md-2">
-                                                                                                                 <label for="cep">CEP:</label>
-							<BR/>
-                                                                                                                 <p:inputText id="cep" value="#{pessoaBean.pessoa.cep }" />
-                                                                                                                 <p:watermark for="cep" value=" 00000-000" />
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-4 col-md-3">
-						<label for="rua">CEP:</label>
-							<BR/>
-                                                                                                <p:inputText id="rua" value="#{pessoaBean.pessoa.rua }" />
-                                                                                                <p:watermark for="rua" value="Rua do Sacramento" />
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-4 col-md-2">
-						<label form="estados">Estado</label>
-                                                                                                            <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-                                                                                                                                                       
-                                                                                                                <p:selectOneMenu id="estados" value="#{pessoaBean.pessoa.estados}" style="width:125px" >
-                                                                                                                                                             
-                                                                                                                                                                <f:selectItem itemLabel="AC" itemValue="4" />	 
-                                                                                                                                                                <f:selectItem itemLabel="AL" itemValue="5" />
-                                                                                                                                                                <f:selectItem itemLabel="AP" itemValue="6" />
-                                                                                                                                                                <f:selectItem itemLabel="AM" itemValue="7" />
-                                                                                                                                                                <f:selectItem itemLabel="BA" itemValue="8" />
-                                                                                                                                                                <f:selectItem itemLabel="CE" itemValue="9" />
-                                                                                                                                                                <f:selectItem itemLabel="DF" itemValue="10" />
-                                                                                                                                                                <f:selectItem itemLabel="ES" itemValue="11" />
-                                                                                                                                                                <f:selectItem itemLabel="GO" itemValue="12" />
-                                                                                                                                                                <f:selectItem itemLabel="MA" itemValue="13" />
-                                                                                                                                                                <f:selectItem itemLabel="MT" itemValue="14" />
-                                                                                                                                                                <f:selectItem itemLabel="MS" itemValue="15" />
-                                                                                                                                                                <f:selectItem itemLabel="MG" itemValue="16" />
-                                                                                                                                                                <f:selectItem itemLabel="PA" itemValue="17" />
-                                                                                                                                                                <f:selectItem itemLabel="PB" itemValue="18" />
-                                                                                                                                                                <f:selectItem itemLabel="PR" itemValue="19" />
-                                                                                                                                                                <f:selectItem itemLabel="PE" itemValue="20" />
-                                                                                                                                                                <f:selectItem itemLabel="PI" itemValue="21" />
-                                                                                                                                                                <f:selectItem itemLabel="RJ" itemValue="22" />
-                                                                                                                                                                <f:selectItem itemLabel="RN" itemValue="23" />
-                                                                                                                                                                <f:selectItem itemLabel="RS" itemValue="24" />
-                                                                                                                                                                <f:selectItem itemLabel="RO" itemValue="25" />
-                                                                                                                                                                <f:selectItem itemLabel="RR" itemValue="26" />
-                                                                                                                                                                <f:selectItem itemLabel="SC" itemValue="27" />
-                                                                                                                                                                <f:selectItem itemLabel="SP" itemValue="28" />
-                                                                                                                                                                <f:selectItem itemLabel="SE" itemValue="29" />
-                                                                                                                                                                <f:selectItem itemLabel="TO" itemValue="30" />
-                                                                                                                                                                </p:selectOneMenu>
-                                                                                                                                                                </h:panelGrid>
-                                                                                                            <!--<select class="form-control" id ="estados">
-							<f:selectItem itemLabel="AC" itemValue="1" />	 
-							<f:selectItem itemLabel="AL" itemValue="1" />
-							<f:selectItem itemLabel="AP" itemValue="1" />
-							<f:selectItem itemLabel="AM" itemValue="1" />
-							<f:selectItem itemLabel="BA" itemValue="1" />
-							<f:selectItem itemLabel="CE" itemValue="1" />
-							<f:selectItem itemLabel="DF" itemValue="1" />
-							<f:selectItem itemLabel="ES" itemValue="1" />
-							<f:selectItem itemLabel="GO" itemValue="1" />
-							<f:selectItem itemLabel="MA" itemValue="1" />
-							<f:selectItem itemLabel="MT" itemValue="1" />
-							<f:selectItem itemLabel="MS" itemValue="1" />
-							<f:selectItem itemLabel="MG" itemValue="1" />
-							<f:selectItem itemLabel="PA" itemValue="1" />
-							<f:selectItem itemLabel="PB" itemValue="1" />
-							<f:selectItem itemLabel="PR" itemValue="1" />
-							<f:selectItem itemLabel="PE" itemValue="1" />
-							<f:selectItem itemLabel="PI" itemValue="1" />
-							<f:selectItem itemLabel="RJ" itemValue="1" />
-							<f:selectItem itemLabel="RN" itemValue="1" />
-							<f:selectItem itemLabel="RS" itemValue="1" />
-							<f:selectItem itemLabel="RO" itemValue="1" />
-							<f:selectItem itemLabel="RR" itemValue="1" />
-							<f:selectItem itemLabel="SC" itemValue="1" />
-							<f:selectItem itemLabel="SP" itemValue="1" />
-							<f:selectItem itemLabel="SE" itemValue="1" />
-							<f:selectItem itemLabel="TO" itemValue="1" />
-						</select> -->
-					</div>
-				</div>
-			</div>
-		</div>
-	
-</section>
-<!-- Inicio da terceira sessão -->
-<section class="container">
-	<div class="row">
-		<div class="col-sm-12">
-			<header>
-				<h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Descreva sobre sua Empresa:</h2>
-				<span>Nessa sessão, descreva o segmento da sua empresa</span>
-			</header>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4">
-			<p>
-				Se você tem mais algum comentário ou dúvidas, escreva no campo a seguir também.</p>
-			</div>
-			<div class="col-md-8">
-				<div class="form-group">
-					
-                                                                               <p:inputTextarea rows="10" cols="50" completeMethod="#{pessoaBean.pessoa.comentario}" queryDelay="750" minQueryLength="4" />
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-4 col-md-offset-4">
-                                                        <p:commandButton value="Adicionar" action="#{pessoaBean.adicionar()}"  style="margin-left: 580px; background-color: lawngreen" />
-                           <!--<button id="btnEnvia" class="btn btn-success">
-					Enviar Respostas
-				</button> -->
-			</div>
-		</div>
-	</section>
-</h:form>		
-        
+                                            <p:selectOneMenu id="console" value="#{pessoaBean.juridico.qtd_funcionarios}" style="width:125px">
+                                                <f:selectItem itemLabel="1 a 500" itemValue="1" />
+                                                <f:selectItem itemLabel=" 501 a 1000" itemValue="2" />
+                                                <f:selectItem itemLabel="1001 a 3000" itemValue="PS4" />
+                                                <f:selectItem itemLabel="mais de 3000" itemValue="Wii U" />
+                                            </p:selectOneMenu>
+                                        </h:panelGrid>
+                                        <!--<label class="radio-inline">
+                                                <input type="radio" id="rdFilhos01" name="funcionarios" value="sim" checked="" />
+                                                Sim 
+                                        </label>
+                                        <div class="form-group">
+                                                <select class="form-control">
+                                                        <option value="0103">1 a 50" itemValue="1" />
+                                                        <option value="0103">50 a 300" itemValue="1" />
+                                                        <option value="0103">Mais de 300" itemValue="1" />
+                                                </select>
+                                        </div>
+                                        <label class="radio-inline">
+                                                <input type="radio" id="rdFilhos02" name="filhos" value="nao" />
+                                                Não 
+                                        </label> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-9 col-sm-offset-3 col-md-4 col-md-offset-0 col-xs-12" id ="second">
+
+                        <!-- Painel Default -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">A empresa possui filiais?</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+
+                                            <p:selectOneMenu id="filiais" value="#{pessoaBean.juridico.qtd_filiais}" style="width:125px" >
+                                                <f:selectItem itemLabel="01 a 03" itemValue="1" />
+                                                <f:selectItem itemLabel=" 03 a 10" itemValue="2" />
+                                                <f:selectItem itemLabel="mais que 10" itemValue="3" />
+
+                                            </p:selectOneMenu>
+                                        </h:panelGrid>
+                                        <!--<label class="radio-inline">
+                                            
+                                                <input type="radio" id="rdCigarros01" name="filiais" value="sim" checked="" />
+                                                Sim 
+                                        </label>
+                                        <div class="form-group">
+                                        <select class="form-control"  id="filiais" name="filiais">
+                                                <option value="0103">" itemValue="1" />
+                                                <option value="0103">03 a 10" itemValue="1" />
+                                                <option value="0103">mais que 10" itemValue="1" />
+                                        </select>
+                                </div>
+                                        <label class="radio-inline">
+                                                <input type="radio" id="rdCigarros02" name="cigarros" value="nao" />
+                                                Não 
+                                        </label> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+            <!-- fim da primeira sessão -->
+            <!-- Inicio da segunda sessão Endereço -->
+            <section class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <header>
+                            <h2><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Endereço</h2>
+                            <span>Preencha com seu endereço:</span>
+                        </header>
+                    </div>
+                </div>
+
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-4 col-md-2">
+                                <label for="cep">CEP:</label>
+                                <BR/>
+                                <p:inputText id="cep" value="#{pessoaBean.pessoa.cep }" />
+                                <p:watermark for="cep" value=" 00000-000" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 col-md-3">
+                                <label for="rua">CEP:</label>
+                                <BR/>
+                                <p:inputText id="rua" value="#{pessoaBean.pessoa.rua }" />
+                                <p:watermark for="rua" value="Rua do Sacramento" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 col-md-2">
+                                <label form="estados">Estado</label>
+                                <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+
+                                    <p:selectOneMenu id="estados" value="#{pessoaBean.pessoa.estados}" style="width:125px" >
+
+                                        <f:selectItem itemLabel="AC" itemValue="4" />	 
+                                        <f:selectItem itemLabel="AL" itemValue="5" />
+                                        <f:selectItem itemLabel="AP" itemValue="6" />
+                                        <f:selectItem itemLabel="AM" itemValue="7" />
+                                        <f:selectItem itemLabel="BA" itemValue="8" />
+                                        <f:selectItem itemLabel="CE" itemValue="9" />
+                                        <f:selectItem itemLabel="DF" itemValue="10" />
+                                        <f:selectItem itemLabel="ES" itemValue="11" />
+                                        <f:selectItem itemLabel="GO" itemValue="12" />
+                                        <f:selectItem itemLabel="MA" itemValue="13" />
+                                        <f:selectItem itemLabel="MT" itemValue="14" />
+                                        <f:selectItem itemLabel="MS" itemValue="15" />
+                                        <f:selectItem itemLabel="MG" itemValue="16" />
+                                        <f:selectItem itemLabel="PA" itemValue="17" />
+                                        <f:selectItem itemLabel="PB" itemValue="18" />
+                                        <f:selectItem itemLabel="PR" itemValue="19" />
+                                        <f:selectItem itemLabel="PE" itemValue="20" />
+                                        <f:selectItem itemLabel="PI" itemValue="21" />
+                                        <f:selectItem itemLabel="RJ" itemValue="22" />
+                                        <f:selectItem itemLabel="RN" itemValue="23" />
+                                        <f:selectItem itemLabel="RS" itemValue="24" />
+                                        <f:selectItem itemLabel="RO" itemValue="25" />
+                                        <f:selectItem itemLabel="RR" itemValue="26" />
+                                        <f:selectItem itemLabel="SC" itemValue="27" />
+                                        <f:selectItem itemLabel="SP" itemValue="28" />
+                                        <f:selectItem itemLabel="SE" itemValue="29" />
+                                        <f:selectItem itemLabel="TO" itemValue="30" />
+                                    </p:selectOneMenu>
+                                </h:panelGrid>
+                                <!--<select class="form-control" id ="estados">
+<f:selectItem itemLabel="AC" itemValue="1" />	 
+<f:selectItem itemLabel="AL" itemValue="1" />
+<f:selectItem itemLabel="AP" itemValue="1" />
+<f:selectItem itemLabel="AM" itemValue="1" />
+<f:selectItem itemLabel="BA" itemValue="1" />
+<f:selectItem itemLabel="CE" itemValue="1" />
+<f:selectItem itemLabel="DF" itemValue="1" />
+<f:selectItem itemLabel="ES" itemValue="1" />
+<f:selectItem itemLabel="GO" itemValue="1" />
+<f:selectItem itemLabel="MA" itemValue="1" />
+<f:selectItem itemLabel="MT" itemValue="1" />
+<f:selectItem itemLabel="MS" itemValue="1" />
+<f:selectItem itemLabel="MG" itemValue="1" />
+<f:selectItem itemLabel="PA" itemValue="1" />
+<f:selectItem itemLabel="PB" itemValue="1" />
+<f:selectItem itemLabel="PR" itemValue="1" />
+<f:selectItem itemLabel="PE" itemValue="1" />
+<f:selectItem itemLabel="PI" itemValue="1" />
+<f:selectItem itemLabel="RJ" itemValue="1" />
+<f:selectItem itemLabel="RN" itemValue="1" />
+<f:selectItem itemLabel="RS" itemValue="1" />
+<f:selectItem itemLabel="RO" itemValue="1" />
+<f:selectItem itemLabel="RR" itemValue="1" />
+<f:selectItem itemLabel="SC" itemValue="1" />
+<f:selectItem itemLabel="SP" itemValue="1" />
+<f:selectItem itemLabel="SE" itemValue="1" />
+<f:selectItem itemLabel="TO" itemValue="1" />
+</select> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!-- Inicio da terceira sessão -->
+            <section class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <header>
+                            <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Descreva sobre sua Empresa:</h2>
+                            <span>Nessa sessão, descreva o segmento da sua empresa</span>
+                        </header>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>
+                            Se você tem mais algum comentário ou dúvidas, escreva no campo a seguir também.</p>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-group">
+
+                            <p:inputTextarea rows="10" cols="50" completeMethod="#{pessoaBean.pessoa.comentario}" queryDelay="750" minQueryLength="4" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-md-offset-4">
+                        <p:commandButton value="Adicionar" action="#{pessoaBean.adicionar()}"  style="margin-left: 580px; background-color: lawngreen" />
+                        <!--<button id="btnEnvia" class="btn btn-success">
+                                     Enviar Respostas
+                             </button> -->
+                    </div>
+                </div>
+            </section>
+        </h:form>		
+
     </ui:define>
 </ui:decorate>
 

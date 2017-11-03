@@ -50,7 +50,8 @@ public class PessoaDAO {
             ps.setInt(15, juridico.getQtd_filiais());
             ps.setInt(16, juridico.getQtd_funcionarios());
             ps.executeUpdate();
-            /*conexao.commit();*/
+            ps.close();
+            
         } catch (SQLException ex) {
             Logger.getLogger(ex.toString());
         }
@@ -90,6 +91,7 @@ public class PessoaDAO {
                 fisicos.add(fisico);
                 juridicos.add(juridico);
             }
+            //resultSet.close();
             return pessoas;
             
         } catch (SQLException ex) {

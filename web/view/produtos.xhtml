@@ -1,61 +1,194 @@
 <ui:decorate xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui"
-      template="template_menu.xhtml"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
- 
-    
-    	
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui"
+             template="template_menu.xhtml"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+
     <ui:define name="menu">
-    <br/>
-    <h:form id="form">
-    <p:dataGrid var="car" value="#{dataGridView.cars}" columns="3"
-        rows="12" paginator="true" id="cars"
-        paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-        rowsPerPageTemplate="6,12,16">
- 
-        <f:facet name="header">
-            Cars for Sale
-        </f:facet>
- 
-        <p:panel header="#{car.id}" style="text-align:center">
-            <h:panelGrid columns="1" style="width:100%">
-                <p:graphicImage name="demo/images/car/#{car.brand}.gif"/> 
- 
-                <h:outputText value="#{car.year}" />
- 
-                <p:commandLink update=":form:carDetail" oncomplete="PF('carDialog').show()" title="View Detail">
-                    <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;" />
-                    <f:setPropertyActionListener value="#{car}" target="#{dataGridView.selectedCar}" />
-                </p:commandLink>
-            </h:panelGrid>
-        </p:panel>
- 
-    </p:dataGrid>
- 
-    <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
-        <p:outputPanel id="carDetail" style="text-align:center;">
-            <p:panelGrid  columns="2" rendered="#{not empty dataGridView.selectedCar}" columnClasses="label,value">
-                <f:facet name="header">
-                    <p:graphicImage name="demo/images/car/#{dataGridView.selectedCar.brand}-big.gif"/> 
-                </f:facet>
- 
-                <h:outputText value="Id:" />
-                <h:outputText value="#{dataGridView.selectedCar.id}" />
- 
-                <h:outputText value="Year" />
-                <h:outputText value="#{dataGridView.selectedCar.year}" />
- 
-                <h:outputText value="Color:" />
-                <h:outputText value="#{dataGridView.selectedCar.color}" style="color:#{dataGridView.selectedCar.color}"/>
- 
-                <h:outputText value="Price" />
-                <h:outputText value="$#{dataGridView.selectedCar.price}" />
-            </p:panelGrid>
-        </p:outputPanel>
-    </p:dialog>
-</h:form>
+        <br/>
+        <h:form>
+            <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.css" /> 
+            <link rel="stylesheet" type="text/css" href="../resources/css/estilo_produtos.css" />
+
+            <section class="sect-services" id="sect-services">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-3 col-sm-6"> 
+
+                            <div class="services-item">
+                                <a href="#" class="services-item-image" style="background-image: url(../resources/media/media.jpg); ">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                                <h4>Dexa Strong</h4>
+                                <div class="services-item-stars">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="services-item-price">
+                                    <i class="fa fa-tags" aria-hidden="true"></i> R$ <span>200</span><div class=""></div>
+                                </div>
+                                <p:commandButton value="Adicionar ao Carrinho"/>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-3 col-sm-6"> 
+                            <div class="services-item">
+                                <a href="#" class="services-item-image" style="background-image: url(../resources/media/media2.jpg); ">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                                <h4>BCAA DNAA</h4>
+                                <div class="services-item-stars">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="services-item-price">
+                                    <i class="fa fa-tags" aria-hidden="true"></i> R$ <span>150</span><div class=""></div>
+                                </div>
+                                <p:commandButton value="Adicionar ao Carrinho"/>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6"> 
+                            <div class="services-item">
+                                <a href="#" class="services-item-image" style="background-image: url(../resources/media/media3.jpg); ">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                                <h4>BCAA DIET</h4>
+                                <div class="services-item-stars">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="services-item-price">
+                                    <i class="fa fa-tags" aria-hidden="true"></i> R$ <span>380</span><div class=""></div>
+                                </div>
+                                <p:commandButton value="Adicionar ao Carrinho"/>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3 col-sm-6"> 
+                            <div class="services-item">
+                                <a href="#" class="services-item-image" style="background-image: url(../resources/media/media4.jpg); ">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                                <h4>Dark Force</h4>
+                                <div class="services-item-stars">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="services-item-price">
+                                    <i class="fa fa-tags" aria-hidden="true"></i> R$ <span>210</span><div class=""></div>
+                                </div>
+
+                                <p:commandButton value="Adicionar ao Carrinho"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6"> 
+                            <div class="services-item">
+                                <a href="#" class="services-item-image" style="background-image: url(../resources/media/media5.jpg); ">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                                <h4>Gainers 6:1</h4>
+                                <div class="services-item-stars">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="services-item-price">
+                                    <i class="fa fa-tags" aria-hidden="true"></i> R$ <span>140</span><div class=""></div>
+                                </div>
+                                <p:commandButton value="Adicionar ao Carrinho"/>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6"> 
+                            <div class="services-item">
+                                <a href="#" class="services-item-image" style="background-image: url(../resources/media/media5.jpg); ">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                                <h4>Bombex Absoluth</h4>
+                                <div class="services-item-stars">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="services-item-price">
+                                    <i class="fa fa-tags" aria-hidden="true"></i> R$ <span>160</span><div class=""></div>
+                                </div>
+                                <p:commandButton value="Adicionar ao Carrinho"/>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6"> 
+                            <div class="services-item">
+                                <a href="#" class="services-item-image" style="background-image: url(../resources/media/media7.jpg); ">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                                <h4>8-LOSS</h4>
+                                <div class="services-item-stars">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="services-item-price">
+                                    <i class="fa fa-tags" aria-hidden="true"></i> R$ <span>360</span><div class=""></div>
+                                </div>
+                                <p:commandButton value="Adicionar ao Carrinho"/>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6"> 
+                            <div class="services-item">
+                                <a href="#" class="services-item-image" style="background-image: url(../resources/media/media8.jpg); ">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                                <h4>UNOVA MONSTER</h4>
+                                <div class="services-item-stars">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="services-item-price">
+                                    <i class="fa fa-tags" aria-hidden="true"></i> R$ <span>360</span>руб<div class=""></div>
+                                </div>
+                                <p:selectOneMenu id="produto" value="#{produtoBean.produto.qtd}" style="width:125px" >
+
+                                    <f:selectItem itemLabel="1" itemValue="1" />	 
+                                    <f:selectItem itemLabel="2" itemValue="2" />
+                                </p:selectOneMenu>
+                                <p:commandButton value="Adicionar ao Carrinho"/>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Paginação -->
+
+            <div class="pagination-wrap">
+                <ul class="pagination pagination-v2">
+                    <li><a href="#">Previous</a></li>
+                    <li><a class="active" href="#">1</a></li>
+                    <li><a  href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">----</a></li>
+                    <li><a href="#">Next</a></li>
+                </ul>
+            </div>
+
+        </h:form>
+        <script src="../resources/js/js_nav.js"></script>
+        <script src="../resources/js/bootstrap.min.js"></script>
     </ui:define>
-        
+
 </ui:decorate>

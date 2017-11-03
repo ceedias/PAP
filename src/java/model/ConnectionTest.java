@@ -21,11 +21,12 @@ public class ConnectionTest {
         Connection conn = null;
         try {
             // db parameters
-            String url = "jdbc:sqlite:/Users/cesardias/Documents/Pulse.db";
+            String url = "jdbc:mysql://localhost/PULSE?" +
+                                   "user=ADMIN&password=ADMIN";
             // create a connection to the database
             conn = DriverManager.getConnection(url);
             
-            System.out.println("Connection to SQLite has been established.");
+            System.out.println("Connection to MySQL has been established.");
             
         } catch (SQLException e) {
             System.out.println(e.getMessage());

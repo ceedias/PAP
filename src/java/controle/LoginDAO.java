@@ -38,8 +38,8 @@ public class LoginDAO  {
             boolean result = false;
             
             
-            setSql("SELECT login, senha "  
-                + "FROM PESSOA WHERE login = ? and senha = ? ");
+            setSql("SELECT LOGIN, SENHA "  
+                + "FROM PESSOA WHERE LOGIN = ? and SENHA = ? ");
 
             try (Connection conn = ConnectionFactory.connect();
                 PreparedStatement pstmt  = conn.prepareStatement(getSql())){

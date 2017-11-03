@@ -8,99 +8,79 @@
     <h:head>
         <title>Pulse Probióticos</title>
         <style type="text/css">
-            
+
         </style>
     </h:head>
     <h:body style="background-color: #1E90FF">
         <h:form>  
-    <p:growl id="messages"/>
- 
-    <p:menubar style="background-color: #afd9ee">
-        <p:submenu label="Produtos" icon="ui-icon-cart">
-            <p:submenu label="Objetivo" icon="ui-icon-contact">
-                <p:menuitem value="Emagrecimento" url="#" />
-                <p:menuitem value="Massa Muscular" url="#" />
-            </p:submenu>
-            <p:menuitem value="Open" url="#" />
-            <p:separator />
-            <p:menuitem value="Quit" url="#" />
-        </p:submenu>
- 
-        <p:submenu label="Cadastro" icon="ui-icon-person">
-            <p:menuitem value="Cliente Fisico" url="form_cliente_fisico.xhtml" icon="ui-icon-person" />
-            <p:menuitem value="Cliente Juridico" url="form_cliente_juridico.xhtml" icon="ui-icon-person" />
-        </p:submenu>
- 
-        <p:submenu label="Help" icon="ui-icon-help">
-            <p:menuitem value="Contents" url="#" />
-            <p:submenu label="Search" icon="ui-icon-search">
-                <p:submenu label="Text">
-                    <p:menuitem value="Workspace" url="#" />
+            <p:growl id="messages"/>
+
+            <p:menubar style=" background-color: #363636">
+                <p:menuitem value="Index" url="indexLogon.xhtml" icon="ui-icon-close" />
+                <p:submenu label="Produtos" icon="ui-icon-cart">
+                    <p:submenu label="Objetivo" icon="ui-icon-contact">
+                        <p:menuitem value="Emagrecimento" url="produtos.xhtml" />
+                        <p:menuitem value="Massa Muscular" url="produtos.xhtml" />
+                    </p:submenu>
+
+                    <p:separator />
+                    <p:menuitem value="Sobre Nós" url="sobrenos.html" />
                 </p:submenu>
-                <p:menuitem value="File" url="#" />
-            </p:submenu>
-        </p:submenu>
- 
-        <p:submenu label="Actions" icon="ui-icon-gear">
-            <p:submenu label="Ajax" icon="ui-icon-refresh">
-                <p:menuitem value="Save" actionListener="#{menuView.save}" icon="ui-icon-disk" update="messages"/>
-                <p:menuitem value="Update" actionListener="#{menuView.update}" icon="ui-icon-arrowrefresh-1-w" update="messages"/>
-            </p:submenu>
-            <p:submenu label="Non-Ajax" icon="ui-icon-newwin">
-                <p:menuitem value="Delete" actionListener="#{menuView.delete}" icon="ui-icon-close" update="messages" ajax="false"/>
-            </p:submenu>
-        </p:submenu>
- 
-        <p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />
- 
-        <f:facet name="options">
-            <p:inputText style="margin-right:10px" placeholder="Search"/>    
-        </f:facet>
-      
-    </p:menubar>
-</h:form>
-        
+
+                <p:submenu label="Cadastro" icon="ui-icon-person">
+                    <p:menuitem value="Cliente Fisico" url="form_cliente_fisico.xhtml" icon="ui-icon-person" />
+                    <p:menuitem value="Cliente Juridico" url="form_cliente_juridico.xhtml" icon="ui-icon-person" />
+                </p:submenu>
+
+
+                <p:menuitem value="Sobre Nós" url="sobrenos.html" icon="ui-icon-close" />
+
+                <p:menuitem value="Entrar" url="login.xhtml" icon="ui-icon-close" />
+
+            </p:menubar>
+        </h:form>
+
 
         <ui:insert name="menu"/>
-        
-                  
-        <!-- Inicio do footer -->
-<section class="footer">
-    <div class="container">
-       
-          <div class="col-lg-4  col-md-4 col-sm-4">
-              <div class="footer_dv">
-                  <h4>Suplementos</h4>
-                  <ul>
-                      <li class="line_rv"><a href="canon-printer-support.php">Suplementos para Emagrecimento</a></li>
-               
-                        <li><a href="hp-printer-support.php">Suplementos para Bucking</a></li>
-                        <li><a href="dell-printer-support.php">Suplementos para Cutting</a></li>
-                        <li><a href="epson-printer-support.php">Suplementos em Promoção</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4  col-md-4 col-sm-4">
-              <div class="footer_dv">
-                  <h4>CADASTRE-SE</h4>
-                  <ul>
-                      <li><a href="form_cliente_fisico.html">Cliente Fisico</a></li>
-                        <li><a href="form_cliente_juridico.html">Cliente Juridico</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4  col-md-4 col-sm-4">
-              <div class="footer_dv">
-                  <h4>Entre em Contato</h4>
-                  <p>Pulse Suporte 24hs</p>
-            <p>BRA-SP +55 (11) 2781-2675<br />
 
-        
-                </p></div>
+
+        <!-- Inicio do footer -->
+        <section class="footer">
+            <div class="container">
+
+                <div class="col-lg-4  col-md-4 col-sm-4">
+                    <div class="footer_dv">
+                        <h4>Suplementos</h4>
+                        <ul>
+                            <li class="line_rv"><a href="canon-printer-support.php">Suplementos para Emagrecimento</a></li>
+
+                            <li><a href="hp-printer-support.php">Suplementos para Bucking</a></li>
+                            <li><a href="dell-printer-support.php">Suplementos para Cutting</a></li>
+                            <li><a href="epson-printer-support.php">Suplementos em Promoção</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4  col-md-4 col-sm-4">
+                    <div class="footer_dv">
+                        <h4>CADASTRE-SE</h4>
+                        <ul>
+                            <li><a href="form_cliente_fisico.html">Cliente Fisico</a></li>
+                            <li><a href="form_cliente_juridico.html">Cliente Juridico</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4  col-md-4 col-sm-4">
+                    <div class="footer_dv">
+                        <h4>Entre em Contato</h4>
+                        <p>Pulse Suporte 24hs</p>
+                        <p>BRA-SP +55 (11) 2781-2675<br />
+
+
+                        </p></div>
+                </div>
+
             </div>
-       
-    </div>
-</section>
+        </section>
     </h:body>
 </html>
 

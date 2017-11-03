@@ -14,14 +14,14 @@ import java.util.logging.Logger;
 public class ConnectionFactory {
     
    private static Connection conexao;
-    private static final String URL_CONEXAO = "jdbc:sqlite:/Users/cesardias/Documents/Pulse.db";
-    private static final String USUARIO = null;
-    private static final String SENHA = null; 
+    private static final String URL_CONEXAO = "jdbc:mysql://localhost/PULSE?";
+    private static final String USUARIO = "ADMIN";
+    private static final String SENHA = "ADMIN"; 
     
     public static Connection connect() {
         if(conexao == null){
             try {
-                Class.forName("org.sqlite.JDBC");
+                Class.forName("com.mysql.jdbc.Driver");
                 conexao = DriverManager.getConnection(URL_CONEXAO, USUARIO, SENHA);
             } catch (SQLException ex) {
                 Logger.getLogger(ConnectionFactory.class.getName()).log(Level.SEVERE, null, ex);

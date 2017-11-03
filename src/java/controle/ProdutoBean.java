@@ -8,12 +8,14 @@ package controle;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.faces.bean.ManagedBean;
 import model.Produto;
 
 /**
  *
  * @author cesardias
  */
+@ManagedBean
 public class ProdutoBean {
 
     /**
@@ -33,14 +35,14 @@ public class ProdutoBean {
     /**
      * @return the produtos
      */
-    public List <Produto> getProdutos() {
+    public List<Produto> getProdutos() {
         return produtos;
     }
 
     /**
      * @param produtos the produtos to set
      */
-    public void setProdutos(List <Produto> produtos) {
+    public void setProdutos(List<Produto> produtos) {
         this.produtos = produtos;
     }
 
@@ -58,17 +60,17 @@ public class ProdutoBean {
         this.produtoDAO = produtoDAO;
     }
     private Produto produto = new Produto();
-    private List <Produto> produtos = new ArrayList<>();
+    private List<Produto> produtos = new ArrayList<>();
     private ProdutoDAO produtoDAO = new ProdutoDAO();
 
-    public void adicionar() throws SQLException{
+    public void adicionar() throws SQLException {
         getProdutos().add(getProduto());
         getProdutoDAO().salvar(getProduto());
         setProduto(new Produto());
     }
-    
-    public void listar () throws SQLException {
-           produtos = produtoDAO.buscar();
-       }
+
+    public void listar() throws SQLException {
+        produtos = produtoDAO.buscar();
+    }
 
 }

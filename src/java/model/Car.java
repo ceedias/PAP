@@ -10,62 +10,71 @@ package model;
  * @author cesardias
  */
 public class Car {
-    public String id;
-    public String brand;
-    public int year;
-    public String color;
-    public int price;
-    public boolean sold;
+    
+                public String model;
+	public int year;
+	public String manufacturer;
+	public String color;
+                public int price;
+                public boolean sold;
 
- 
-    
-    public Car(String id, String brand, int year, String color) {
-        this.id = id;
-        this.brand = brand;
-        this.year = year;
-        this.color = color;
-    }
-    
-    public Car(String id, String brand, int year, String color, int price, boolean sold) {
-        this.id = id;
-        this.brand = brand;
-        this.year = year;
-        this.color = color;
+    public Car(String model, int year, String manufacturer, String color) {
+		this.model = model;
+		this.year = year;
+		this.manufacturer = manufacturer;
+		this.color = color;
+	}
+	
+	public Car(String model, int year, String manufacturer, String color, int price, boolean sold) {
+		this(model, year, manufacturer, color);
         this.price = price;
         this.sold = sold;
+	}
+
+    public Car(String randomBrand, String randomColor) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public String getId() {
-        return id;
-    }
-    public void setId(String id) {
-        this.id = id;
+    public Car(String randomBrand, String randomColor, String randomId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public String getBrand() {
-        return brand;
-    }
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
+	public String getModel() {
+		return model;
+	}
 
-    public int getYear() {
-        return year;
-    }
-    public void setYear(int year) {
-        this.year = year;
-    }
+	public void setModel(String model) {
+		this.model = model;
+	}
 
-    public String getColor() {
-        return color;
-    }
-    public void setColor(String color) {
-        this.color = color;
-    }
+	public int getYear() {
+		return year;
+	}
 
-    public int getPrice() {
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public String getManufacturer() {
+		return manufacturer;
+	}
+
+	public void setManufacturer(String manufacturer) {
+		this.manufacturer = manufacturer;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+     public int getPrice() {
         return price;
     }
+
     public void setPrice(int price) {
         this.price = price;
     }
@@ -73,30 +82,34 @@ public class Car {
     public boolean isSold() {
         return sold;
     }
+
     public void setSold(boolean sold) {
         this.sold = sold;
     }
+    
+	@Override
+	public boolean equals(Object obj) {
+		if(obj == null)
+			return false;
+		
+		if(!(obj instanceof Car))
+			return false;
+		
+		Car compare = (Car) obj;
+	
+		return compare.model.equals(this.model);
+	}
+
+	@Override
+	public int hashCode() {
+		int hash = 1;
+		
+	    return hash * 31 + model.hashCode();
+	}
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + (this.id != null ? this.id.hashCode() : 0);
-        return hash;
-    }
+    public String toString() {
+        return "Car{" + "model=" + model + ", year=" + year + ", manufacturer=" + manufacturer + ", color=" + color + ", price=" + price + '}';
+    }}
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Car other = (Car) obj;
-        if ((this.id == null) ? (other.id != null) : !this.id.equals(other.id)) {
-            return false;
-        }
-        return true;
-    }
-}
 

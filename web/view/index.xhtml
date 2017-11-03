@@ -1,150 +1,185 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui"
-      template="template_menu.xhtml"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
- 
-    
-    	
-    <ui:define name="menu">
-         <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.css" /> 
-  <link rel="stylesheet" type="text/css" href="../resources/css/estilo.css" />
-        <br/>
-<!-- Carroussel com Banners -->
-  <div class="container">
-    <div id="main-carousel" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
-        <li data-target="#main-carousel" data-slide-to="1"></li>
-        <li data-target="#main-carousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <div class="carousel-caption">
-            
-          </div>
-          <img src="../resources/media/banner-promoção-01-iloveimg-resized.png" alt="Imagem do Primeiro Item" />
-        </div>
-        <div class="item">
-          <div class="carousel-caption">
-         
-          </div>
-          <img src="../resources/media/banner-promoção-04.jpeg" alt="Imagem do Segundo Item" />
-        </div>
-        <div class="item">
-          <div class="carousel-caption">
-            
-          </div>
-          <img src="../resources/media/nutri3.jpg" alt="Imagem do Terceiro Item" />
-        </div>
-        <a class="carousel-control left" href="#main-carousel" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="carousel-control right" href="#main-carousel" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-  </div>
+<html xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui"
+             xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+             template="template_menu.xhtml"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-  <!-- Titulo -->
 
-  <div class="container">
-    <div class="row">
-        <div class="page-header">
-          <h1>Os mais Procurados</h1>
-          <span class="icon-bar">
-            <i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
-          </span>
-          <h2>O que esta em alta !!!</h2>
-        </div>
-    </div>
-</div>
+ <h:head>
+        <title>Pulse Probióticos</title>
+       <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css" /> 
+        <link rel="stylesheet" type="text/css" href="resources/css/estilo.css" />
+    </h:head>
+    <h:body style="background-color: #1E90FF">
+        <h:form>  
+            <p:growl id="messages"/>
 
-  <!-- Inicio dos conteudos -->
-  <div class="container">
-    
-    <div class="row">
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="../resources/media/whey.jpeg" alt="..." />
-          <div class="caption">
-            <h3>Whey Protein</h3>
-            <p>...</p>
-            <p><a href="#" class="btn btn-primary" role="button">Comprar</a> <a href="#" class="btn btn-default" role="button">Detalhes</a></p>
-          </div>
+            <p:menubar style=" background-color: #363636">
+                <p:menuitem value="Index" url="view/indexLogon.xhtml" icon="ui-icon-close" />
+                <p:submenu label="Produtos" icon="ui-icon-cart">
+                    <p:submenu label="Objetivo" icon="ui-icon-contact">
+                        <p:menuitem value="Emagrecimento" url="view/produtos.xhtml" />
+                        <p:menuitem value="Massa Muscular" url="viewprodutos.xhtml" />
+                    </p:submenu>
 
-        </div>
-      </div>
+                    <p:separator />
+                    <p:menuitem value="Sobre Nós" url="sobrenos.html" />
+                </p:submenu>
 
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="../resources/media/carnivor.jpeg" alt="..." />
-          <div class="caption">
-            <h3>Carnivor</h3>
-            <p>...</p>
-            <p><a href="#" class="btn btn-primary" role="button">Comprar</a> <a href="#" class="btn btn-default" role="button">Detalhes</a></p>
-          </div>      
-        </div>
-      </div>
+                <p:submenu label="Cadastro" icon="ui-icon-person">
+                    <p:menuitem value="Cliente Fisico" url="view/form_cliente_fisico.xhtml" icon="ui-icon-person" />
+                    <p:menuitem value="Cliente Juridico" url="view/form_cliente_juridico.xhtml" icon="ui-icon-person" />
+                </p:submenu>
 
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="../resources/media/whey.jpeg" alt="..." />
-          <div class="caption">
-            <h3>Whey Protein</h3>
-            <p>...</p>
-            <p><a href="#" class="btn btn-primary" role="button">Comprar</a> <a href="#" class="btn btn-default" role="button">Detalhes</a></p>
-          </div>      
-        </div>
-      </div>
 
-    </div>
-  </div>
+                <p:menuitem value="Sobre Nós" url="view/sobrenos.html" icon="ui-icon-close" />
 
-<!-- JS -->
-  <script src="../resources/js/js_nav.js"></script>
-  <script src="../resources/js/bootstrap.min.js"></script>
+                <p:menuitem value="Entrar" url="view/login.xhtml" icon="ui-icon-close" />
 
-<!-- Inicio do footer -->
-<section class="footer">
-    <div class="container">
-       
-          <div class="col-lg-4  col-md-4 col-sm-4">
-              <div class="footer_dv">
-                  <h4>Suplementos</h4>
-                  <ul>
-                      <li class="line_rv"><a href="canon-printer-support.php">Suplementos para Emagrecimento</a></li>
-               
-                        <li><a href="hp-printer-support.php">Suplementos para Bucking</a></li>
-                        <li><a href="dell-printer-support.php">Suplementos para Cutting</a></li>
-                        <li><a href="epson-printer-support.php">Suplementos em Promoção</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4  col-md-4 col-sm-4">
-              <div class="footer_dv">
-                  <h4>CADASTRE-SE</h4>
-                  <ul>
-                      <li><a href="form_cliente_fisico.html">Cliente Fisico</a></li>
-                        <li><a href="form_cliente_juridico.html">Cliente Juridico</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4  col-md-4 col-sm-4">
-              <div class="footer_dv">
-                  <h4>Entre em Contato</h4>
-                  <p>Pulse Suporte 24hs</p>
-            <p>BRA-SP +55 (11) 2781-2675<br />
+            </p:menubar>
+        </h:form>
+
+
+  
+
 
         
-                </p></div>
-            </div>
+
        
-    </div>
-</section>
-    </ui:define>
-</ui:decorate>
+        <br/>
+        <!-- Carroussel com Banners -->
+        <div class="container">
+            <div id="main-carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#main-carousel" data-slide-to="1"></li>
+                    <li data-target="#main-carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="carousel-caption">
+
+                        </div>
+                        <img src="resources/media/banner-promoção-01-iloveimg-resized.png" alt="Imagem do Primeiro Item" />
+                    </div>
+                    <div class="item">
+                        <div class="carousel-caption">
+
+                        </div>
+                        <img src="resources/media/banner-promoção-04.jpeg" alt="Imagem do Segundo Item" />
+                    </div>
+                    <div class="item">
+                        <div class="carousel-caption">
+
+                        </div>
+                        <img src="resources/media/nutri3.jpg" alt="Imagem do Terceiro Item" />
+                    </div>
+                    <a class="carousel-control left" href="#main-carousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="carousel-control right" href="#main-carousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Titulo -->
+
+        <div class="container">
+            <div class="row">
+                <div class="page-header">
+                    <h1>Os mais Procurados</h1>
+                    <span class="icon-bar">
+                        <i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
+                    </span>
+                    <h2>O que esta em alta !!!</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inicio dos conteudos -->
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="resources/media/whey.jpeg" alt="..." />
+                        <div class="caption">
+                            <h3>Whey Protein</h3>
+                            <p>...</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Comprar</a> <a href="#" class="btn btn-default" role="button">Detalhes</a></p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="resources/media/carnivor.jpeg" alt="..." />
+                        <div class="caption">
+                            <h3>Carnivor</h3>
+                            <p>...</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Comprar</a> <a href="#" class="btn btn-default" role="button">Detalhes</a></p>
+                        </div>      
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="resources/media/whey.jpeg" alt="..." />
+                        <div class="caption">
+                            <h3>Whey Protein</h3>
+                            <p>...</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Comprar</a> <a href="#" class="btn btn-default" role="button">Detalhes</a></p>
+                        </div>      
+                    </div>
+                </div>
+
+            </div>
+        </div>
+<!-- Inicio do footer -->
+        <section class="footer">
+            <div class="container">
+
+                <div class="col-lg-4  col-md-4 col-sm-4">
+                    <div class="footer_dv">
+                        <h4>Suplementos</h4>
+                        <ul>
+                            <li class="line_rv"><a href="canon-printer-support.php">Suplementos para Emagrecimento</a></li>
+
+                            <li><a href="hp-printer-support.php">Suplementos para Bucking</a></li>
+                            <li><a href="dell-printer-support.php">Suplementos para Cutting</a></li>
+                            <li><a href="epson-printer-support.php">Suplementos em Promoção</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4  col-md-4 col-sm-4">
+                    <div class="footer_dv">
+                        <h4>CADASTRE-SE</h4>
+                        <ul>
+                            <li><a href="form_cliente_fisico.xhtml">Cliente Fisico</a></li>
+                            <li><a href="form_cliente_juridico.xhtml">Cliente Juridico</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4  col-md-4 col-sm-4">
+                    <div class="footer_dv">
+                        <h4>Entre em Contato</h4>
+                        <p>Pulse Suporte 24hs</p>
+                        <p>BRA-SP +55 (11) 2781-2675<br />
+
+
+                        </p></div>
+                </div>
+
+            </div>
+        </section>
+        <!-- JS -->
+        <script src="resources/js/js_nav.js"></script>
+        <script src="resources/js/bootstrap.min.js"></script>
+    </h:body>    
+</html>
+

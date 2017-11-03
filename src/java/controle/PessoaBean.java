@@ -11,6 +11,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import model.Pessoa;
 import java.sql.SQLException;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import model.Fisico;
 import model.Juridico;
 
@@ -22,52 +24,71 @@ import model.Juridico;
 @SessionScoped
 public class PessoaBean {
 
+    private Pessoa pessoa = new Pessoa();
+    private Juridico juridico = new Juridico();
+    private Fisico fisico = new Fisico();
+    private List<Pessoa> pessoas = new ArrayList<>();
+    private List<Fisico> fisicos = new ArrayList<>();
+    private List<Juridico> juridicos = new ArrayList<>();
+    private PessoaDAO pessoaDAO = new PessoaDAO();
+    private LoginDAO dao = new LoginDAO();
+
+    /**
+     * @return the dao
+     */
+    public LoginDAO getDao() {
+        return dao;
+    }
+
+    /**
+     * @param dao the dao to set
+     */
+    public void setDao(LoginDAO dao) {
+        this.dao = dao;
+    }
+
     /**
      * @return the fisicos
      */
-    public List <Fisico> getFisicos() {
+    public List<Fisico> getFisicos() {
         return fisicos;
     }
 
     /**
      * @param fisicos the fisicos to set
      */
-    public void setFisicos(List <Fisico> fisicos) {
+    public void setFisicos(List<Fisico> fisicos) {
         this.fisicos = fisicos;
     }
 
     /**
      * @return the juridicos
      */
-    public List <Juridico> getJuridicos() {
+    public List<Juridico> getJuridicos() {
         return juridicos;
     }
 
     /**
      * @param juridicos the juridicos to set
      */
-    public void setJuridicos(List <Juridico> juridicos) {
+    public void setJuridicos(List<Juridico> juridicos) {
         this.juridicos = juridicos;
     }
- 
-    private Pessoa pessoa = new Pessoa();
-    private Juridico juridico = new Juridico();
-    private Fisico fisico = new Fisico();
-    private List <Pessoa> pessoas= new ArrayList<>();
-    private List <Fisico> fisicos = new ArrayList<>();
-    private List <Juridico> juridicos = new ArrayList<>();
-    private PessoaDAO pessoaDAO = new PessoaDAO();
-    
-       public void adicionar() throws SQLException{
+
+    public void adicionar() throws SQLException {
         getPessoas().add(getPessoa());
-        
+
         pessoaDAO.salvar(pessoa, fisico, juridico);
         setPessoa(new Pessoa());
     }
-       
-       public void listar () throws SQLException {
-           pessoas = pessoaDAO.buscar();
-       }
+
+    
+    
+    
+    public void listar() throws SQLException {
+        pessoas = pessoaDAO.buscar();
+    }
+
     /**
      * @return the pessoa
      */
@@ -113,16 +134,34 @@ public class PessoaBean {
     /**
      * @return the pessoas
      */
-    public List <Pessoa> getPessoas() {
+    public List<Pessoa> getPessoas() {
         return pessoas;
     }
 
     /**
      * @param pessoas the pessoas to set
      */
-    public void setPessoas(List <Pessoa> pessoas) {
+    public void setPessoas(List<Pessoa> pessoas) {
         this.pessoas = pessoas;
     }
+
+    public String verificaLogin() throws SQLException {
+
+        if (getDao().verificaLogin(getPessoa())) {
+
+            return vaiParaIndex();
+
+        } else {
+            FacesContext.getCurrentInstance().addMessage("growl",
+                    new FacesMessage("Não autorizado", "Nenhum registro foi encontrado com essas informações"));
+            return null;
+        }
+
+    }
     
-   
+
+    public String vaiParaIndex() {
+        return "/view/indexLogon?faces-redirect=true";
+    }
+
 }
